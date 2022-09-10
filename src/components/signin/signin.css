@@ -1,0 +1,165 @@
+#signinContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgColor);
+    height: 100%;
+    width: 100%;
+margin-top: 40px;
+border: 1px solid rgb(214, 206, 206);
+border-radius: 10px;
+
+}
+#signinHeader{
+
+    display: flex;
+    align-items: center;
+    /* background-color: #ffff; */
+    width: 60%;
+}
+#signinHeader h3{
+    width: 100%;
+    margin-left: 1px;
+    align-items: center;
+    text-align: center;
+}
+#signinHeader hr{
+    display: inline-block;
+    width: 47%;
+    margin: 0 4px;
+    height: 1px;
+    border: 2px solid #27A9E1;
+}
+#signinHeader span{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 2px;
+   
+    /* background-color: aqua; */
+}
+#signinHeader span img{
+    width: 50px;
+    height: 60px;
+
+    border-radius: 10px;
+}
+#signinHeader h3{
+    font-family: var(--titleFontFamily);
+    color: var(--purple);
+
+}
+#signinForm{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+   
+}
+@media screen and (max-width:900px) {
+    #signinForm{
+        width: 85%;
+    }
+    #signinHeader span{
+        width: 60px;
+        height: 60px;
+        margin-left: -28%;
+    }
+}
+#signinForm h1{
+    font-family: var(--titleFontFamily);
+    font-size: var(--titleFontSize);
+    margin: 10px 0 2px 0;
+}
+
+#signinForm p{
+    font-size: 12px;
+    margin-bottom: 15px;
+    opacity: .6;
+}
+
+.signinInput{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+.signinInput label,
+.signinInput input{
+    display: inline-block;
+}
+.signinInput label{
+    margin: 5px 0;
+}
+.signinInput input{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 30px;
+    border: var(--borderSize);
+    outline: none;
+}
+.signinInput input::placeholder{
+    margin-left: 5px;
+    color: gray;
+}
+
+#signinForm button {
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--purple);
+    color: #27A9E1;
+    margin: 10px 0 0 0;
+    border: var(--borderSize);
+}
+#signinForm button #link{
+    color: #27A9E1;
+    /* background-color: black; */
+}
+#signinForm button{
+    background-color: black;
+    width: 25%;
+   margin-left: 110px;
+}
+#or{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 15px 0 0 0;
+    width: 90%;
+}
+#or hr{
+    display: inline-block;
+    width: 47%;
+    margin: 0 4px;
+    height: 1px;
+    border: 1px solid rgb(160, 158, 158);
+}
+
+
+#signinAlternative{
+    margin: 30px 0;
+    text-align: center;
+}
+#signAlternative{
+    margin: 3px 0;
+    text-align: center;
+}
+#loginButtons img{
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+}
+#loginButtons img:nth-child(1){
+    width: 10px;
+    height: 10px;
+}
+#link{
+    text-decoration: none;
+    color: #27A9E1;
+}
+#signAlternative p span #link{
+   color: #27A9E1;
+}

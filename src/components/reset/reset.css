@@ -1,0 +1,126 @@
+#resetContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgColor);
+    height: 100%;
+    width: 100%;
+/* padding: 50px 0; */
+padding: 8rem 0;
+margin-top: 40px;
+border: 1px solid rgb(214, 206, 206);
+border-radius: 10px;
+
+}
+#reset{
+/* margin-top: -60px; */
+    display: flex;
+    align-items: center;
+    /* background-color: #ffff; */
+    width: 60%;
+}
+#reset hr{
+    display: inline-block;
+    width: 47%;
+    margin: 0 4px;
+    height: 1px;
+    border: 1px solid #27A9E1;
+    
+}
+#reset span{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 2px;
+   
+    /* background-color: aqua; */
+}
+#reset span img{
+    width: 50px;
+    height: 60px;
+
+    border-radius: 10px;
+}
+#reset h3{
+    text-align: center;
+ width: 100%;
+
+}
+#resetform{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+   
+}
+@media screen and (max-width:900px) {
+    #resetform{
+        width: 85%;
+    }
+    #reset span{
+        width: 60px;
+        height: 60px;
+        margin-left: -28%;
+    }
+}
+
+#resetform h1{
+    font-family: var(--titleFontFamily);
+    font-size: var(--titleFontSize);
+    margin: 10px 0 2px 0;
+}
+
+#resetform p{
+    font-size: 12px;
+    margin-bottom: 15px;
+    opacity: .6;
+}
+
+.signinInput{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+.signinInput label,
+.signinInput input{
+    display: inline-block;
+}
+.signinInput label{
+    margin: 5px 0;
+}
+.signinInput input{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 30px;
+    border: var(--borderSize);
+    outline: none;
+}
+.signinInput input::placeholder{
+    margin-left: 5px;
+    color: gray;
+}
+
+#resetform button{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--purple);
+    color: #27A9E1;
+    margin: 10px 0 0 0;
+    border: var(--borderSize);
+}
+#resetform button #link{
+    padding: 10px 7px;
+    width: 900px;
+    height: 10px;
+    border-radius: 10px;
+    background-color:black;
+    color: #27A9E1;
+    /* margin: -10px 0 0 0; */
+   
+    /* border: var(--borderSize); */
+}
+

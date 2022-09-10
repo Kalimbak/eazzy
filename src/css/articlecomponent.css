@@ -1,0 +1,35 @@
+.articles{
+    margin-top: 0.5rem;
+
+    background-color: #fff;
+    box-shadow: 0 0 0 1px var(--main-a);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  
+}
+.articles:not(:first-child) .articles__image{
+display: none;
+}
+.article__image{
+    display: block;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 40%;
+    border-radius: 5px 5px 0 0;
+}
+.articles__details{
+    display: flex;
+    padding: 1rem;
+    position: relative;
+}
+.articles__details .u-pic{
+    display: none;
+    width: 100%;
+}
+.articles__details .u-pic img{
+    border-radius: 50%;
+    width: 100%;
+}
+

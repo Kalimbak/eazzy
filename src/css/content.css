@@ -1,0 +1,58 @@
+.main-content header{
+display: flex;
+align-items: center;
+padding: 0.5rem 0;
+}
+.main-content header h1{
+    font-size: 1.25rem;
+    flex: 1;
+}
+.main-content header nav a{
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.main-content header nav a:hover{
+    background-color: rgba(#3b49df, 6);
+    color: var(--main-theme);
+}
+.main-content header nav a:first-child{
+    border: none;
+    position: relative;
+    font-weight: 700;
+}
+.main-content header nav a:first-child::after{
+    content: "";
+    height: 3px;
+    background-color: var(--main-theme);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    transition: all 0.2s;
+}
+.main-content header nav a:first-child:hover:after{
+    margin: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.main-content select{
+    display: none;
+    padding: 0.5rem;
+
+    outline: none;
+    border-radius: 5px;
+
+    font-size: 1rem;
+    color: var(--font-color);
+    background-color: var(--main-0);
+
+    border: 1px solid var(--main-3);
+
+}
+.main-content select:focus{
+    box-shadow: 0px 0px 1px 1px var(--main-theme);
+}
+
