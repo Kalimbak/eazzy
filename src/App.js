@@ -11,6 +11,7 @@ import Login from "./pages/signInPage/signInPage";
 import ResetPage from "./pages/reset/resetPage";
 import { Message } from "./components/messagereset/reset";
 import { Password } from "./components/password/reset";
+// import WritePost from "./WritePost";
 // import { Reset } from "./components/reset/reset";
 
 
@@ -40,6 +41,8 @@ function App() {
         <Route path="/signup" element={<SignUpPage/>}/>
         <Route path="/reset" element={<ResetPage/>}/>
           <Route path="/home" element={<Home/>}/>
+          {/* <Route path="/post" element={<WritePost/>}/> */}
+
         </Routes>
       </Router>
     </>
