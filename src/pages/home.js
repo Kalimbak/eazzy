@@ -4,6 +4,7 @@ import LeftSidebar from "../components/LeftSidebar";
 
 import RightSidebar from "../components/RightSidebar";
 import { useState } from "react";
+import Home1 from "./home/home";
 // import Post from "../components/post/Post";
 
 function Home() {
@@ -19,15 +20,15 @@ function Home() {
       <Navigation openMenu={toggle} />
 
       <main className="main-container">
-        <LeftSidebar burgerMenu={mobileMenu} closeMenu={toggle} />
     {/* <Post/> */}
+<Home1/>
 
     {/* {
       post.map((a)=>{
 
       })
     } */}
-        {/* <RightSidebar /> */}
+      <RightSidebar /> 
       </main>
     </>
   );

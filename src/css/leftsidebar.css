@@ -1,14 +1,28 @@
 .hidden{
-    display: none;
+    display: flex;
 }
+.leftBar{
+    /* position: fixed; */
+    /* position: fixed; */
+    background-color: rgb(204, 202, 214);
+    width: 100%;
+    padding: 20px 13px ;
+    height: 20%;
+    /* justify-content: left; */
+    /* color: #27a9e1; */
+    /* margin-left: -40px; */
+}
+
 .leftBar .hidden{
     display: none;
 }
 .leftBar__menu ul li a{
+    
     display: flex;
       align-items: center;
       padding: 0.5rem;
-      color: var(--main-9);
+      color: #27a9e1;
+      
 
 }
 .leftBar__menu ul li a i{
@@ -40,6 +54,11 @@
 }
 .leftBar__social a:hover{
     color: var(--main-9);
+}
+.leftBar__taglist{
+padding: 30px 0;
+    border-radius: 20px;
+
 }
 .leftBar__taglist header{
     display: flex;

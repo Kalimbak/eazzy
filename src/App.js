@@ -11,6 +11,8 @@ import Login from "./pages/signInPage/signInPage";
 import ResetPage from "./pages/reset/resetPage";
 import { Message } from "./components/messagereset/reset";
 import { Password } from "./components/password/reset";
+import Newhome from "./pages/newhome";
+// import ModalExampleModal from "./modal";
 // import WritePost from "./WritePost";
 // import { Reset } from "./components/reset/reset";
 
@@ -40,7 +42,9 @@ function App() {
         <Route path="/resetmessage" element={<Message/>}/>
         <Route path="/signup" element={<SignUpPage/>}/>
         <Route path="/reset" element={<ResetPage/>}/>
-          <Route path="/home" element={<Home/>}/>
+        <Route path="/home" element={<Home/>}/>
+        <Route path="/postarticlle" element={<Newhome/>}/>
+        <Route path="/postjob" element={<Newhome/>}/>
           {/* <Route path="/post" element={<WritePost/>}/> */}
 
         </Routes>

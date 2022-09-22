@@ -1,23 +1,66 @@
 .rightBar{
+    width: 100%;
+    height: 20%;
     display: flex;
     flex-direction: column;
+    background-color: rgb(204, 202, 214);
+
 }
-.rightBar__card-hackathon{
-    background-color: var(--main-0);
-    padding: 1rem;
-    border-radius: 5px;
-    line-height: 1.5;
-    height: max-content;
-    display: none;
+.allin{
+    padding: 30px 40px;
 }
-.rightBar img{
-    width: 100%;
-    height: auto;
-    max-height: 100px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-bottom: 1rem;
+.socials{
+    align-items: center;
+    border-radius: 10px;
+    background-color: black;
+    gap: 30px;
+    color: #27a9e1;
+    padding: 50px 40px;
+    align-items: center;
 }
+
+
 .rightBar p a {
     color: var(--main-theme);
+}
+
+.rightBar ul{
+    padding: 20px 0;
+    display: flex;
+    gap: 30px;
+}
+.pjob{
+    display: flex;
+    gap: 60px;
+}
+.pjob p{
+    margin-top: 12px;
+}
+.pjob button{
+    background-color: blue;
+}
+.ul{
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    height: 50vh;
+    overflow-y: auto;
+    margin-right: 0.75rem;
+    line-height: 1.6;
+}
+.ul li{
+    padding: 0 25px;
+    border-radius: 10px;
+    list-style:armenian;
+}
+.jobs{
+    margin-top:25px ;
+padding: 30px 0;
+    background-color: #27a9e1;
+    border-radius: 10px;
+}
+.jobs p {
+    padding: 0 25px;
+    font-weight: 800;
+
 }
