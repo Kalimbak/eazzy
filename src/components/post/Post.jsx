@@ -4,7 +4,9 @@ import "./post.css";
 
 export default function Post({img}) {
 
-  const [post, setPost] = useState('')
+  // const [post, setPost] = useState('')
+  
+
 
   useEffect(() => {
 
@@ -14,7 +16,7 @@ export default function Post({img}) {
 {/* 
       {
         post.map((a) =>{
-
+<div className="image">{post.image}</div>
         })
       } */}
       <img

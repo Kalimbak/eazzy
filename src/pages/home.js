@@ -4,7 +4,7 @@ import LeftSidebar from "../components/LeftSidebar";
 
 import RightSidebar from "../components/RightSidebar";
 import { useState } from "react";
-import Post from "../components/post/Post";
+// import Post from "../components/post/Post";
 
 function Home() {
   const [mobileMenu, setmobileMenu] = useState(false);
@@ -20,7 +20,13 @@ function Home() {
 
       <main className="main-container">
         <LeftSidebar burgerMenu={mobileMenu} closeMenu={toggle} />
-    <Post/>
+    {/* <Post/> */}
+
+    {/* {
+      post.map((a)=>{
+
+      })
+    } */}
         {/* <RightSidebar /> */}
       </main>
     </>

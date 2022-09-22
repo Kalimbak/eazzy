@@ -7,55 +7,43 @@ import { UserRepositoryImpl } from "../../data/repository/user-repository";
 // import google from './google.png'
 // import facebook from './facebook1.png'
 import { Link, Navigate } from "react-router-dom";
+import axios from "axios";
 
 
 export const SignUp = () =>{
 
-    // const navigate = useNavigate()
+    // const Navigate = useNavigate()
     const [state,setState]=useState({})
-    
-    const userRepository = new UserRepositoryImpl()
-    /**
-     * 
-     * @param {Event} evt
-     */
-
-    const submitUserData =async (evt)=>{
-        evt.preventDefault();
-        /**
-         * @type {HTMLFormElement}
-         */
-        const form = evt.target;
-         /**
-     * @type {import('../../../data/models/types').UserModel}
-    */
-
-        const formData = getFormData(form);
-        console.log("fsdfsd",formData);
-        const resp = await userRepository.registerUser(formData);
-        // if(resp === true){
-        //     navigate("/")
-        // }
+   
+    const onchange = (e) =>{
+     
+        setState({
+            ...state,
+            [e.target.name]:e.target.value
+        })
+     
     }
-    // const onChange = (e) =>{
-     
-    //     setState({
-    //         ...state,
-    //         [e.target.name]:e.target.value
-    //     })
-     
-    // }
 
-    // const signUp = async(e) =>{
-    //     e.preventDefault()
-    //     console.log('kevinmulimba')
-    //     console.log(JSON.stringify(state))
-    
-    //   await  fetch('https://eibackend.herokuapp.com/api/users/signup' ,{method:'POST',mode:'no-cors',body:JSON.stringify(state),headers:{'content-type':'application/json'}})
-    
-   
-   
-    //  }
+    const signUp = async(e) =>{
+        e.preventDefault()
+        console.log('kevinmulimba')
+        console.log(JSON.stringify())
+  
+
+// fttfrfytgyutgi6gf76fi7f
+    console.log(state)
+    axios.post('http://localhost:4000/user/signup', state)
+      .then(function (response) {
+        console.log(response);
+        // if(response === 200){
+        //     Navigate("/home")
+        //    }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  
+     }
     return(
         <div id="signupContent">
             <div id="signupHeader">
@@ -63,11 +51,11 @@ export const SignUp = () =>{
                 <h3 className="one">Eazzy Interact</h3>
                 <hr/>
             </div>
-            <form onSubmit={submitUserData} id="signupForm">
+            <form  id="signupForm">
          
                 <div className="signupInput">
                     <label htmlFor="">Email</label>
-                    <input type="text" placeholder="Enter your email" name="email" />
+                    <input type="text" placeholder="Enter your email" name="email" onChange={onchange}/>
                 </div>
                 {/* <div className="signupInput">
                     <label htmlFor="">Fullname</label>
@@ -75,14 +63,14 @@ export const SignUp = () =>{
                 </div> */}
                 <div className="signupInput">
                     <label htmlFor="">Username</label>
-                    <input type="text" placeholder="Enter your username" name="name" />
+                    <input type="text" placeholder="Enter your username" name="name" onChange={onchange}/>
                 </div>
                 <div className="signupInput">
                     <label htmlFor="">Password</label>
-                    <input type="password" placeholder="............" name="password" />
+                    <input type="password" placeholder="............" name="password" onChange={onchange}/>
                 </div>
  
-                <button type="submit">Sign Up</button>
+                <button onClick={signUp}>Sign Up</button>
              
                 
             </form>

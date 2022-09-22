@@ -4,14 +4,43 @@ import logo from './logo.jpeg'
 import google from './google.png'
 import facebook from './facebook1.png'
 import { Link } from "react-router-dom";
+import axios from "axios"
 
 
 export const SignIn = () =>{
 
-    const [data, setData] = useState("false")
-    const yes = () =>{
-        setData(data)
+    const [state, setState] = useState("false")
+  
+
+    const onchange = (e) =>{
+     
+        setState({
+            ...state,
+            [e.target.name]:e.target.value
+        })
+     
     }
+
+    const login = async(e) =>{
+        e.preventDefault()
+        console.log('kevinmulimba')
+        console.log(JSON.stringify())
+  
+
+// fttfrfytgyutgi6gf76fi7f
+    console.log(state)
+    axios.post('http://localhost:4000/user/login', state)
+      .then(function (response) {
+        console.log(response);
+        // if(response === 200){
+        //     Navigate("/home")
+        //    }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  
+     }
     return(
         <div id="signinContent">
             <div id="signinHeader">
@@ -19,19 +48,19 @@ export const SignIn = () =>{
                 <h3>Eazzy Interact</h3>
                 <hr/>
             </div>
-            <form action="" id="signinForm">
+            <form  id="signinForm">
                 <h1>SIGN IN</h1>
                 <p>Welcome to Eazzy Interact fill in this form</p>
                 <div className="signinInput">
                     <label htmlFor="">Email</label>
-                    <input type="text" placeholder="Enter your email"/>
+                    <input type="text" placeholder="Enter your email" name="email" onChange={onchange}/>
                 </div>
                 <div className="signinInput">
                     <label htmlFor="">Password</label>
-                    <input type="password" placeholder="............"/>
+                    <input type="password" placeholder="............"  name="password" onChange={onchange}/>
                 </div>
                 
-                <button ><Link to="" id="link">Login</Link></button>
+                <button onClick={login}><Link to="" id="link">Login</Link></button>
                 <p id="or"><hr /> OR <hr /></p>
        
             </form>
