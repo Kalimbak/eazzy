@@ -123,17 +123,16 @@ export default function Postarticle(){
                 <input type="file" name="image" id="" className='addCoverImgButton' onChange={onclick} />  
               </div>
               <div className="titleInputContainer">
-                <input type="text" name="title" id="" className="titleInput" placeholder='Write your articles title here ...' onChange={onclick}/>
+                <input type="text" name="title" id="title" className="titleInput" placeholder='Write your articles title here ...' onChange={onchange}/>
+              </div>
+              <h5>Description </h5>
+              <div className="titleInputContainer">
+                <input type="text" name="title" id="description" className="titleInput" placeholder='Write your articles title here ...' onChange={onchange}/>
               </div>
                         </div>
-                        {/* <div className="saveContainer">
-                <button className="publish">Publish</button>
-                <button className="saveDraft">Save draft</button>
-            </div> */}
+                       
                         <div className='quill'>
-                          <h5 onChange={onclick}>Description
-            <ReactQuill className='kk' placeholder='Type your description here ...' modules={modules}  onChange={setValue} name="content" />
-            </h5>
+                   
             </div>
           
             </div>

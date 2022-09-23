@@ -3,26 +3,63 @@ import 'react-quill/dist/quill.snow.css';
 import { useState } from 'react';
 import {BsXLg} from 'react-icons/bs'
 import "./postarticle.css"
+import "./postjob.css"
 import Logo from "../../logo.jpeg"
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const modules = {
-    toolbar: [
-      [{ header: '1' }, { header: '2' }, ],
+// const modules = {
+//     toolbar: [
+//       [{ header: '1' }, { header: '2' }, ],
 
-      ['bold'],
+//       ['bold'],
      
       
-      ['link'],
-    ],
-    clipboard: {
-      matchVisual: false,
-    },
+//       ['link'],
+//     ],
+//     clipboard: {
+//       matchVisual: false,
+//     },
+//   }
+  
+export default function Post(){
+
+
+  const [state, setState] = useState("false")
+  
+
+  const onchange = (e) =>{
+   
+      setState({
+          ...state,
+          [e.target.name]:e.target.value
+      })
+   
   }
 
-export default function Post(){
-    const [value,setValue] = useState('')
-    console.log(value)
+  const Job = async(e) =>{
+      e.preventDefault()
+      console.log('kevinmulimba')
+      console.log(JSON.stringify())
+
+
+// fttfrfytgyutgi6gf76fi7f
+  console.log(state)
+  axios.post('http://localhost:4000/jobs', state)
+    .then(function (response) {
+      console.log(response);
+     
+      // if(response === 200){
+      //     Navigate("/home")
+      //    }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+   }
+    // const [value,setValue] = useState('')
+    // console.log(value)
     return(
         <>
 
@@ -34,7 +71,7 @@ export default function Post(){
 
 
                 <div className="closeContainer">
-                <span className="title" id='span'>Post Job</span>
+                <span className="title" id='span' onClick={Job}>Post Job</span>
 <Link to='/home'>
                     <BsXLg className='closeIcon'/>
                     </Link>
@@ -44,20 +81,17 @@ export default function Post(){
         <div className='post1'>
             
             <div className="editPost">
-            <div className="titlebar">
-            
+            <div className="titlebar" id='kevin'>
+          
               <div className="titleInputContainer">
-                <input type="text" name="" id="" className="titleInput" placeholder='Write the job title here ...' />
+                <input type="text" name="title" id="title" className="titleInput" placeholder='Write your articles title here ...' onChange={onchange}/>
+              </div>
+              <h5>Description </h5>
+              <div className="titleInputContainer">
+                <input type="text" name="description" id="description" className="titleInput" placeholder='Write your articles title here ...' onChange={onchange}/>
               </div>
                         </div>
-                        {/* <div className="saveContainer">
-                <button className="publish">Publish</button>
-                <button className="saveDraft">Save draft</button>
-            </div> */}
-                        <div className='quill'>
-                          <h5>Job Description</h5>
-            <ReactQuill className='kk' placeholder='Type job description here ...' modules={modules}  onChange={setValue}/>
-            </div>
+                       
           
             </div>
             </div>
