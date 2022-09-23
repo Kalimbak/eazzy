@@ -33,6 +33,7 @@ span{
 
 .namenpic .image{
     width: 100%;
+    cursor: pointer;
     /* height: ; */
 }
 .input{

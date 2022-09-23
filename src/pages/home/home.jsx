@@ -4,6 +4,7 @@ import "./home.css"
 // import LeftSidebar from "../components/LeftSidebar";
 import Image from "../../pic.jpg"
 import { BiLike } from "react-icons/bi";
+import { Link } from "react-router-dom";
 import LeftSidebar from "../../components/LeftSidebar";
 // import "node_modules/video-react/dist/video-react.css";
 // import RightSidebar from "../components/RightSidebar";
@@ -16,7 +17,7 @@ function Home1() {
   const posts= [
     
        {
-name: "kalimba kevin",
+name: "Aminadab Bruce",
 description: "this is a dummy trial",
 
       },
@@ -52,7 +53,10 @@ description: "this is a dummy trial",
         <div className="post">
         <div className="namenpic">
         <div className="up">
+        <Link to='/profile' >
+
         <img className="profile" src={Image} alt="" height={"60px"} />
+        </Link>
         <p> {posts.name}</p>
         </div>
         <p className="dummy">{posts.description}</p>

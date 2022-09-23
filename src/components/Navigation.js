@@ -20,7 +20,7 @@ const Navigation = (props) => {
           className="headerContainer__hamburgerMenu"
           onClick={() => props.openMenu()}
         ></div>
-        <a  className="headerContainer__logo">
+        <a  className="headerContainer__logo" href="/home">
           <img src={Image} alt="" size="3.125rem"/>
         </a>
 
@@ -31,15 +31,13 @@ const Navigation = (props) => {
         </div>
 
         <div className="headerContainer__right">
-         <Link to=""> <button >Write a post</button></Link>
-     <button>Post a job</button>
+         <Link to="/postarticle"> <button >Write a post</button></Link>
+    <Link to="/postjob"> <button>Post a job</button> </Link>
 
           <i className="hidden-search">
             <FiSearch />
           </i>
-          <i>
-            <BiMessageRoundedCheck />
-          </i>
+        
           <i>
             <RiNotificationLine />
           </i>

@@ -1,0 +1,66 @@
+.container{
+    display: flex;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.mainc{
+    /* background-color: red; */
+    border: 3px solid #27a9e1;
+    height: 400px;
+    border-radius: 20px;
+    width: 50%;
+    padding: 10px 100px;
+    gap: 50px;
+    justify-content: space-between;
+}
+.span{
+color: black;
+background-color: transparent;
+}
+
+.Link{
+    display: flex;
+    width: 700px;
+}
+.modalbtn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+  }
+.prof{
+    display: flex;
+    width: 100px;
+    align-items: center;
+    border-radius: 40px;
+justify-content: center;
+}
+.paragraph{
+    padding: 30px 0;
+    gap: 30px;
+}
+.paragraph p{
+    padding: 5px 0;
+    font-weight: bolder;
+}
+.paragraph p span{
+    font-weight: bolder;
+}
+
+.edits{
+    display: flex;
+    flex-direction: row-reverse;
+  
+}
+.edits button{
+      background-color: black;
+      color: #27a9e1;
+      border-radius: 12px;
+      border: 3px solid black;
+      padding: 4px 5px;
+}

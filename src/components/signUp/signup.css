@@ -6,13 +6,18 @@
     background-color: var(--bgColor);
     /* padding: 10px; */
     height: 90%;
-    width: 80%;
-border: 0.5px solid rgb(214, 206, 206);
+    width: 100%;
+border: 2px solid #27A9E1;
 border-radius: 10px;
 margin-top: 35px;
 margin-left: 70px;
 
 }
+.select{
+    border-radius: 30px;
+    width: 90%;
+}
+
 #signupHeader{
 
     display: flex;
@@ -64,6 +69,18 @@ width: 100%;
     /* padding: 20px; */
     width: 60%;
     /* background-color: aqua; */
+}
+#signupForm .hello{
+    /* margin-left:-90px ; */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 19px;
+}
+.sbtn{
+    background-color: transparent;
 }
 #signupForm h1{
     font-family: var(--titleFontFamily);

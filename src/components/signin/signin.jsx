@@ -29,9 +29,10 @@ export const SignIn = () =>{
 
 // fttfrfytgyutgi6gf76fi7f
     console.log(state)
-    axios.post('http://localhost:4000/user/login', state)
+    axios.post('http://localhost:6000/api/users/login', state)
       .then(function (response) {
         console.log(response);
+       
         // if(response === 200){
         //     Navigate("/home")
         //    }
@@ -43,14 +44,14 @@ export const SignIn = () =>{
      }
     return(
         <div id="signinContent">
-            <div id="signinHeader">
+            {/* <div id="signinHeader">
                 <hr/>
                 <h3>Eazzy Interact</h3>
                 <hr/>
-            </div>
+            </div> */}
             <form  id="signinForm">
-                <h1>SIGN IN</h1>
-                <p>Welcome to Eazzy Interact fill in this form</p>
+                <h1>Sign in to EazzyInteract:</h1>
+                {/* <p>Welcome to Eazzy Interact fill in this form</p> */}
                 <div className="signinInput">
                     <label htmlFor="">Email</label>
                     <input type="text" placeholder="Enter your email" name="email" onChange={onchange}/>
@@ -65,13 +66,13 @@ export const SignIn = () =>{
        
             </form>
             
-            <p id="signinAlternative">Don't have an account? <span>
+            <p id="signinAlternative">Don't have an account? <span className="sbtn">
             <Link id="link" to="/signup" >Sign up</Link>
             </span></p>
               
-            <p id="signAlternative">Forgot Password? <span>
+            {/* <p id="signAlternative">Forgot Password? <span className="sbtn">
             <Link id="link" to="/reset" >Reset password</Link>
-            </span></p>
+            </span></p> */}
            
         </div>
     );

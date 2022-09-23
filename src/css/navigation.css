@@ -1,6 +1,7 @@
 .header{
     max-width: 100%;
-    background-color: var(--header-bg);
+    /* background-color: var(--header-bg); */
+    background-color: #27a9e1;
     display: flex;
     height: var(--header-height);
     padding: 1rem 3rem;
