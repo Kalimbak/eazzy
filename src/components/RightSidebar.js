@@ -1,114 +1,76 @@
-import React from "react";
-import Image from "../logo.jpeg"
-import CardComponent from "./CardComponent";
-const listings = [
-  {
-    id: 1,
-    mainTitle: "Go/JS/PHP Software engineer looking for new opportunities",
-    subText: "forHire",
-  },
-  {
-    id: 2,
-    mainTitle: "Live-Coding on YouTube continues tomorrow",
-    subText: "events",
-  },
-  {
-    id: 3,
-    mainTitle: "Product Designer",
-    subText: "jobs",
-  },
-  {
-    id: 4,
-    mainTitle: "FREE COURSE, this weekend only: Ship better code faster",
-    subText: "education",
-  },
-  {
-    id: 5,
-    mainTitle: "MEAN / MERN Stack 100+ Learning Resources {FREE}",
-    subText: "misc",
-  },
-];
-const news = [
-  {
-    id: 1,
-    mainTitle: "Game Dev Digest — Issue #83 - How and Why",
+import React,{ useEffect, useState }  from "react";
+// import Image from "../logo.jpeg"
+import axios from "axios";
+import { BsFacebook } from "react-icons/bs"
+import { AiFillInstagram, AiFillLinkedin} from "react-icons/ai"
 
-    newarticle: true,
-  },
-  {
-    id: 2,
-    mainTitle: "JavaScript News and Updates of February 2021",
 
-    newarticle: true,
-  },
-  {
-    id: 3,
-    mainTitle: "🗞 What's new and special in Create Go App CLI v1.7.0?",
-
-    newarticle: true,
-  },
-  {
-    id: 4,
-    mainTitle:
-      "Google’s Termination of Dr. Mitchell, Clubhouse Security, Low-Code Tools, & more on DevNews!",
-    subText: "1 comment",
-    newarticle: false,
-  },
-  {
-    id: 5,
-    mainTitle: "Ember 3.25 Released",
-
-    newarticle: true,
-  },
-];
-
-const help = [
-  {
-    id: 1,
-    mainTitle: "How to start a programming blog?",
-
-    newarticle: true,
-  },
-  {
-    id: 2,
-    mainTitle: "How to use @yarnpkg/core?",
-    subText: "2 comments",
-    newarticle: false,
-  },
-  {
-    id: 3,
-    mainTitle: "Need advice regarding web development",
-    subText: "5 comments",
-
-    newarticle: false,
-  },
-];
 
 const RightSidebar = () => {
+
+
+  const [job, setJob] = useState([])
+
+  useEffect(()=>{
+    
+// const [job, setJob] = useState('')
+
+// useEffect(()=>{
+ axios.get('http://localhost:4000/job')
+ .then(res => {
+   console.log(res.data);
+   setJob(res.data)
+ })
+.catch(err =>{
+   console.log(err);
+ })
+ console.log("hello")
+ console.log("hello")
+ 
+}, [])
+
+
   return (
     <aside className="rightBar">
-      <div className="rightBar__card-hackathon">
-        <p>
-          <img src={Image} alt="" />
-        </p>
-        <h2>
-          <a href="/#">"Hack the Planet" with New Relic & DEV</a>
-        </h2>
+    <div className="allin">
+     <div className="socials">
+     Social medias
+     <ul>
+     <li>
+     <a href="">
+     <BsFacebook/>
+     </a>
+     </li>
+     <li>
+     <a href="">
+     <AiFillInstagram/>
+     </a>
+     </li>
+     <li>
+     <a href="">
+     <AiFillLinkedin/>
+     </a>
+     </li>
+     </ul>
+     </div>
+     <div className="jobs">
+     <div className="pjob">
+     <p>Latest Jobs</p>
+    
+     </div>
+     <ul className="ul">
+     
+     {job.map((job) =>
+        <li>
+        
+        <a href={job.description} >{job.title}</a>
+        </li>
+      )
+     }
+     </ul>
 
-        <p>
-          Use New Relic to build a climate-change observability app for the
-          chance to win up to $5,000!
-          <strong>
-            <a href="/#">&nbsp;join the hackathon</a>
-          </strong>
-        </p>
-      </div>
-
-      <CardComponent tag="Listings" articles={listings} />
-
-      <CardComponent tag="#news" articles={news} />
-
-      <CardComponent tag="#help" articles={help} />
+     </div>
+     </div>
     </aside>
   );
 };

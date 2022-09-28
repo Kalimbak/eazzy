@@ -1,4 +1,5 @@
 #signinContent{
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +8,7 @@
     height: 100%;
     width: 100%;
 margin-top: 40px;
-border: 1px solid rgb(214, 206, 206);
+border: 2px solid #27A9E1;
 border-radius: 10px;
 
 }
@@ -57,6 +58,16 @@ border-radius: 10px;
     width: 60%;
    
 }
+#signinForm h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    font-family: var(--titleFontFamily);
+    font-size: 30px;
+    padding: 0 0 8px 0;
+    /* margin: 10px 0 2px 0; */
+}
 @media screen and (max-width:900px) {
     #signinForm{
         width: 85%;
@@ -67,11 +78,9 @@ border-radius: 10px;
         margin-left: -28%;
     }
 }
-#signinForm h1{
-    font-family: var(--titleFontFamily);
-    font-size: var(--titleFontSize);
-    margin: 10px 0 2px 0;
-}
+/* #signinForm h1{
+   
+} */
 
 #signinForm p{
     font-size: 12px;

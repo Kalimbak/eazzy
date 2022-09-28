@@ -3,10 +3,12 @@ import Image from "../logo.jpeg"
 import { BiMessageRoundedCheck } from "react-icons/bi";
 import { RiNotificationLine } from "react-icons/ri";
 import { FiSearch } from "react-icons/fi";
+import {Link} from "react-router-dom"
+
 
 const Navigation = (props) => {
   const [showMenu, setshowMenu] = useState(false);
-
+// const [isModal, setIsModel] = useState(false)
   const toggle = () => {
     setshowMenu(!showMenu);
   };
@@ -18,7 +20,7 @@ const Navigation = (props) => {
           className="headerContainer__hamburgerMenu"
           onClick={() => props.openMenu()}
         ></div>
-        <a  className="headerContainer__logo">
+        <a  className="headerContainer__logo" href="/home">
           <img src={Image} alt="" size="3.125rem"/>
         </a>
 
@@ -29,13 +31,13 @@ const Navigation = (props) => {
         </div>
 
         <div className="headerContainer__right">
-          <button>Write a post</button>
+         <Link to="/postarticle"> <button >Write a post</button></Link>
+    <Link to="/postjob"> <button>Post a job</button> </Link>
+
           <i className="hidden-search">
             <FiSearch />
           </i>
-          <i>
-            <BiMessageRoundedCheck />
-          </i>
+        
           <i>
             <RiNotificationLine />
           </i>

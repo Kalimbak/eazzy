@@ -8,6 +8,8 @@ import { UserRepositoryImpl } from "../../data/repository/user-repository";
 // import facebook from './facebook1.png'
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
+import Select from "react-select"
+
 
 
 export const SignUp = () =>{
@@ -23,7 +25,6 @@ export const SignUp = () =>{
         })
      
     }
-
     const signUp = async(e) =>{
         e.preventDefault()
         console.log('kevinmulimba')
@@ -32,7 +33,7 @@ export const SignUp = () =>{
 
 // fttfrfytgyutgi6gf76fi7f
     console.log(state)
-    axios.post('http://localhost:4000/user/signup', state)
+    axios.post('http://localhost:6000/api/users/signup', state)
       .then(function (response) {
         console.log(response);
         // if(response === 200){
@@ -46,12 +47,14 @@ export const SignUp = () =>{
      }
     return(
         <div id="signupContent">
-            <div id="signupHeader">
+            {/* <div id="signupHeader">
                 <hr/>
                 <h3 className="one">Eazzy Interact</h3>
                 <hr/>
-            </div>
+            </div> */}
+            
             <form  id="signupForm">
+                <div className="hello">Create account in EazzyInteract:</div>
          
                 <div className="signupInput">
                     <label htmlFor="">Email</label>
@@ -64,7 +67,29 @@ export const SignUp = () =>{
                 <div className="signupInput">
                     <label htmlFor="">Username</label>
                     <input type="text" placeholder="Enter your username" name="name" onChange={onchange}/>
+                </div> 
+                <div className="signupInput">
+                    <label htmlFor="">Phone Number</label>
+                    <input type="text" placeholder="Enter your phone number" name="phoneNumber" onChange={onchange}/>
                 </div>
+                <div className="signupInput">
+                    <label htmlFor="">Gender (Male / Female)</label>
+                    <input type="text" placeholder="Enter your Gender" name="gender" onChange={onchange}/>
+                </div> 
+                {/* <div className="signupInput">
+                     <label htmlFor="">Gender</label>  */}
+                    {/* <input type="text" placeholder="Enter your username" name="name" onChange={onchange}/> */}
+                    
+                {/* <Select
+                options={genders}
+                  name="gender"
+                  className="select"
+                  id='input'
+                //   onChange={onchange}
+                /> */}
+               
+                {/* </div> */}
+                {/* <select name="" id="" option></select> */}
                 <div className="signupInput">
                     <label htmlFor="">Password</label>
                     <input type="password" placeholder="............" name="password" onChange={onchange}/>
@@ -76,7 +101,7 @@ export const SignUp = () =>{
             </form>
             
 
-            <p id="signinAlternative">Already have an account? <span><Link id="link" to="/">Sign in</Link></span></p>
+            <p id="signinAlternative">Already have an account? <span className="sbtn"><Link id="link" to="/" >Sign in</Link></span></p>
         </div>
     );
 }
