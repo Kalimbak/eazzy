@@ -120,7 +120,7 @@ export default function Postarticle(){
                     {/* <button className="changeCoverImg">Change</button>
                     <button className="removeCoverImg">Remove</button> */}
                 </div>
-                <input type="file" name="image" id="" className='addCoverImgButton' onChange={onclick} />  
+                <input type="file" name="imageUrl" id="" className='addCoverImgButton' onChange={onclick} />  
               </div>
               <div className="titleInputContainer">
                 <input type="text" name="title" id="title" className="titleInput" placeholder='Write your articles title here ...' onChange={onchange}/>
