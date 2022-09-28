@@ -50,7 +50,7 @@ export default function Postarticle(){
 
 // fttfrfytgyutgi6gf76fi7f
     console.log(state)
-    axios.post('http://localhost:4000/blogs', state)
+    axios.post('https://kalimbacapstone.herokuapp.com/blogs', state)
       .then(function (response) {
         console.log(response);
        

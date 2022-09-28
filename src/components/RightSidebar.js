@@ -16,7 +16,7 @@ const RightSidebar = () => {
 // const [job, setJob] = useState('')
 
 // useEffect(()=>{
- axios.get('http://localhost:4000/job')
+ axios.get('https://kalimbacapstone.herokuapp.com/job')
  .then(res => {
    console.log(res.data);
    setJob(res.data)

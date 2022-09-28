@@ -45,7 +45,7 @@ export default function Post(){
 
 // fttfrfytgyutgi6gf76fi7f
   console.log(state)
-  axios.post('http://localhost:4000/jobs', state)
+  axios.post('https://kalimbacapstone.herokuapp.com/jobs', state)
     .then(function (response) {
       console.log(response);
      

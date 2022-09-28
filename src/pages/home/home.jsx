@@ -47,7 +47,7 @@ function Home1() {
  const [posts, setPosts] = useState([])
 
  useEffect(()=>{
-  axios.get('http://localhost:4000/blog')
+  axios.get('https://kalimbacapstone.herokuapp.com/blog')
   .then(res => {
     console.log(res);
     setPosts(res.data)
