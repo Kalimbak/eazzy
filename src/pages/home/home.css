@@ -12,6 +12,11 @@
     width: 100%;
     border-radius: 30px;
 }
+.date{
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-size-adjust: 10;
+}
 .up{
     padding: 10px 10px;
     display: flex;

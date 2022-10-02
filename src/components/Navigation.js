@@ -3,7 +3,9 @@ import Image from "../logo.jpeg"
 import { BiMessageRoundedCheck } from "react-icons/bi";
 import { RiNotificationLine } from "react-icons/ri";
 import { FiSearch } from "react-icons/fi";
-import {Link} from "react-router-dom"
+import axios from "axios";
+import swal from "sweetalert";
+import {Link, useNavigate} from "react-router-dom"
 
 
 const Navigation = (props) => {
@@ -12,6 +14,44 @@ const Navigation = (props) => {
   const toggle = () => {
     setshowMenu(!showMenu);
   };
+  const navigate = useNavigate()
+const [state, setState] = useState(false)
+
+//   const onchange = (e) =>{
+     
+//     setState({
+//         ...state,
+//         [e.target.name]:e.target.value
+//     })
+ 
+// }
+
+const logout = async(e) =>{
+    e.preventDefault()
+    console.log('kevinmulimba')
+    console.log(JSON.stringify())
+
+
+// fttfrfytgyutgi6gf76fi7f
+// console.log(state)
+axios.post('http://localhost:4500/api/users/logout', state)
+  .then(function (response) {
+    console.log(response);
+   
+    if(response.status === 200){
+// alert("not a user")
+swal("Your logged out of eazzy interact")
+navigate("/")
+       }
+   
+  })
+  .catch(function (error) {
+    console.log(error);
+    swal("Account or Password doesn't exist")
+
+  });
+
+ }
 
   return (
     <header className="header">
@@ -38,10 +78,7 @@ const Navigation = (props) => {
             <FiSearch />
           </i>
         
-          <i>
-            <RiNotificationLine />
-          </i>
-
+        <button onClick={logout}>Logout</button>
         
         </div>
       </div>

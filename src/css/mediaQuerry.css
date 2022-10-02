@@ -25,8 +25,13 @@
         }
     
         .header .headerContainer__right button {
-            display: none;
+            display: block;
+            min-width: fit-content;
+            height: 30px;
+            padding: 1px 3px;
+            width: auto;
           }
+
         
         .hidden-search {
             display: flex;

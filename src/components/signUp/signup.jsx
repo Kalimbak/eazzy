@@ -1,20 +1,17 @@
 import React, { useState } from "react"
 import './signup.css'
-import logo from './logo.jpeg'
-import { useNavigate } from "react-router-dom";
-import getFormData from "../../utils/formdata";
-import { UserRepositoryImpl } from "../../data/repository/user-repository";
-// import google from './google.png'
-// import facebook from './facebook1.png'
-import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+
+
 import Select from "react-select"
+import swal from "sweetalert";
 
 
 
 export const SignUp = () =>{
 
-    // const Navigate = useNavigate()
+    const Navigate = useNavigate()
     const [state,setState]=useState({})
    
     const onchange = (e) =>{
@@ -31,14 +28,15 @@ export const SignUp = () =>{
         console.log(JSON.stringify())
   
 
-// fttfrfytgyutgi6gf76fi7f
+// // fttfrfytgyutgi6gf76fi7f
     console.log(state)
-    axios.post('http://localhost:6000/api/users/signup', state)
+    axios.post('http://localhost:4500/api/users/signup', state)
       .then(function (response) {
         console.log(response);
-        // if(response === 200){
-        //     Navigate("/home")
-        //    }
+        if(response.status === 200){
+            swal("Welcome to eazzy Interact now login")
+            Navigate("/")
+           }
       })
       .catch(function (error) {
         console.log(error);
@@ -70,7 +68,7 @@ export const SignUp = () =>{
                 </div> 
                 <div className="signupInput">
                     <label htmlFor="">Phone Number</label>
-                    <input type="text" placeholder="Enter your phone number" name="phoneNumber" onChange={onchange}/>
+                    <input type="text" placeholder="Enter your phone number" name="phonenumber" onChange={onchange}/>
                 </div>
                 <div className="signupInput">
                     <label htmlFor="">Gender (Male / Female)</label>

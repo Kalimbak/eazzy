@@ -5,7 +5,7 @@ import {BsXLg} from 'react-icons/bs'
 import "./postarticle.css"
 import "./postjob.css"
 import Logo from "../../logo.jpeg"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 // const modules = {
@@ -24,7 +24,7 @@ import axios from 'axios';
   
 export default function Post(){
 
-
+const Navigate = useNavigate()
   const [state, setState] = useState("false")
   
 
@@ -45,18 +45,18 @@ export default function Post(){
 
 // fttfrfytgyutgi6gf76fi7f
   console.log(state)
-  axios.post('https://kalimbacapstone.herokuapp.com/jobs', state)
+  axios.post('http://localhost:4000/jobs', state)
     .then(function (response) {
       console.log(response);
      
-      // if(response === 200){
-      //     Navigate("/home")
-      //    }
-    })
+   if(response === 201){
+    Navigate("/home")
+     }
+   })
     .catch(function (error) {
       console.log(error);
     });
-
+ 
    }
     // const [value,setValue] = useState('')
     // console.log(value)
@@ -66,7 +66,10 @@ export default function Post(){
         <main className='posting'>
             <div className="topbar">
                 <div className="titleContainer">
-                    <img src={Logo} alt="" className="logo" />
+                   
+                <Link to='/home'>
+<img src={Logo} alt="" className="logo" />
+</Link>
                 </div>
 
 

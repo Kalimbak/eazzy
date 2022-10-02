@@ -1,17 +1,27 @@
 import React, { useState } from "react"
 import './signin.css'
-import logo from './logo.jpeg'
-import google from './google.png'
-import facebook from './facebook1.png'
-import { Link } from "react-router-dom";
+
+import swal from 'sweetalert';
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"
+// import { Message } from "semantic-ui-react"
 
 
 export const SignIn = () =>{
 
+    // const [error, setError] = useState("false")
     const [state, setState] = useState("false")
-  
+  const navigate = useNavigate()
+ 
 
+//   const [loading, setLoading] = useState(false);
+//   useEffect(() =>{
+//       setLoading(true)
+//       setTimeout(()=>{
+//           setLoading(false)
+//       },1000)
+//   },[]);
+ 
     const onchange = (e) =>{
      
         setState({
@@ -29,16 +39,21 @@ export const SignIn = () =>{
 
 // fttfrfytgyutgi6gf76fi7f
     console.log(state)
-    axios.post('http://localhost:6000/api/users/login', state)
+    axios.post('http://localhost:4500/api/users/login', state)
       .then(function (response) {
         console.log(response);
        
-        // if(response === 200){
-        //     Navigate("/home")
-        //    }
+        if(response.status === 200){
+// alert("not a user")
+swal("Welcome to Eazzy Interact")
+navigate("/home")
+           }
+       
       })
       .catch(function (error) {
         console.log(error);
+        swal("Account or Password doesn't exist")
+
       });
   
      }
@@ -69,10 +84,10 @@ export const SignIn = () =>{
             <p id="signinAlternative">Don't have an account? <span className="sbtn">
             <Link id="link" to="/signup" >Sign up</Link>
             </span></p>
-              
-            {/* <p id="signAlternative">Forgot Password? <span className="sbtn">
+            <p id="signinAlterative">Forgot Password? <span className="sbtn">
             <Link id="link" to="/reset" >Reset password</Link>
-            </span></p> */}
+            </span></p>
+          
            
         </div>
     );

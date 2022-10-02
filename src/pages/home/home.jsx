@@ -9,70 +9,40 @@ import { Link } from "react-router-dom";
 import LeftSidebar from "../../components/LeftSidebar";
 import { useEffect } from "react";
 import { useState } from "react";
-// import "node_modules/video-react/dist/video-react.css";
-// import RightSidebar from "../components/RightSidebar";
-// import { useState } from "react";
-// import Post from "../components/post/Post";
+import Welcome from "../welcome";
 
 function Home1() {
   
 
-//   const posts= [
-    
-//        {
-// name: "Aminadab Bruce",
-// description: "this is a dummy trial",
 
-//       },
-
-//       {
-//         name: "kalimba kevin",
-//         description: "this is a dummy trial"
-//               },
-
-//       {
-//         name: "Aminadab Bruce",
-//         description: "this is also a dummy"
-//       },
-//       {
-//         name: "Aminadab Bruce",
-//         description: "this is also a dummy"
-//       },
-//       {
-//         name: "Aminadab Bruce",
-//         description: "this is also a dummy"
-//       }
-    
-//   ]
+const [loading, setLoading] =useState(false)
  const [posts, setPosts] = useState([])
 
  useEffect(()=>{
-  axios.get('https://kalimbacapstone.herokuapp.com/blog')
-  .then(res => {
-    console.log(res);
-    setPosts(res.data)
+  axios.get('http://localhost:4000/article')
+  .then(result => {
+    console.log(result);
+    setPosts(result.data.blogs)
   }).catch(err =>{
     console.log(err);
+
   })
+  setLoading(true)
+  setTimeout(()=>{
+      setLoading(false)
+  },1000)
 },[])
+// const [loading, setLoading] = useState(false);
 // useEffect(() =>{
-//   getPosta();
-// }, [])
+   
+// },[]);
 
-// const getPosta = async () => {
-// try {
-//   const res = await axios.get('http://localhost:4000/blog');
-// setPosts(res.data)
-// }catch (err) {
-//   alert(err.message);
-// }
-
-// }
 
  
 
   return (
     <>
+    {/* (loading ? <Welcome/> :( */}
     <LeftSidebar/>
       <main className="main" >
       
@@ -90,7 +60,8 @@ function Home1() {
         <p> {posts.title}</p>
         </div>
         <p className="dummy">{posts.content}</p>
-         <img className="image" src={Image} alt=""/>
+         <img className="image" src={posts.image} alt=""/>
+         {/* <p className="date">{posts.date}</p> */}
         <button className="btn">Like <BiLike className="like"/></button>
       <div className="input">  <input type="text" placeholder="comment" /> <span> Send </span></div>
       <div>   </div> 
@@ -104,7 +75,8 @@ function Home1() {
     }
    
       </main>
-    </>
+       {/* )) */}
+ </>
   );
 }
 
